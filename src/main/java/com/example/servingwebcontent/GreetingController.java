@@ -1,5 +1,8 @@
 package com.example.servingwebcontent;
 
+import java.sql.Timestamp;
+import java.util.Date;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,7 +19,8 @@ public class GreetingController {
 
 	@GetMapping("/result")
 	public String result(@RequestParam(name="result", required=true) String result, Model model) {
-		System.out.println("result >> " + result);
+		Timestamp ts = new Timestamp(new Date().getTime());
+		System.out.println(ts + ": incoming result > " + result);
 		String wording = "unknown";
 
 		if("1".equals(result)){
