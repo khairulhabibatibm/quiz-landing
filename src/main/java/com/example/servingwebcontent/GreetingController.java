@@ -20,15 +20,18 @@ public class GreetingController {
 	@GetMapping("/result")
 	public String result(@RequestParam(name="result", required=true) String result, Model model) {
 		Timestamp ts = new Timestamp(new Date().getTime());
-		System.out.println(ts + ": incoming result > " + result);
+		
 		String wording = "unknown";
 
-		if("1".equals(result)){
+		if("eW91IGhhdmUgbWVkaXVtIHJlc3VsdA".equals(result)){
 			wording = "You are good to go";
-		}else if("2".equals(result)){
+			System.out.println(ts + ": incoming result > 1");
+		}else if("eW91IGhhdmUgZXhjZWxsZW50IHJlc3VsdA".equals(result)){
 			wording = "You have excellent knowledge!";
-		}else{
+			System.out.println(ts + ": incoming result > 2");
+		}else if("eW91IGhhdmUgbG93IHJlc3VsdA".equals(result)){
 			wording = "You need to learn more about Openshift";
+			System.out.println(ts + ": incoming result > 0");
 		}
 
 		model.addAttribute("wording", wording);
