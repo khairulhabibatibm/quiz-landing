@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Quiz Result</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    
+</head>
+<body>
+    <div class="splash-container">
+        <div class="splash">
+            <h1 class="splash-head">
+                <p th:text="'' + ${wording} + '!'" />
+            </h1>
+            <p class="splash-subhead">
+                Thanks for your participation in IBM - Openshift labs!
+            </p>
+        </div>
+    </div>
+</body>
+</html>
